@@ -36,7 +36,7 @@
 
 <body>
    <div class="col-12 text-center center">
-   	 <h1 class="text-center">Найди правильный порядок</h1>
+   	 <h1 class="text-center">не нажимай на виншю!</h1>
    	 <p class="pr">Очки:<span class="score">0</span></p>
    	 <button class="btn1">перемешать</button>
    	 <div class="col-4 e1"style="height: 150px;width: 300px;position: absolute;;top: 150px;left: 250px;transition: 2s;">
@@ -76,7 +76,7 @@
   	  let img6 = document.querySelector('.img6');
   	  let center = document.querySelector('.center');
   	  let score = 0;
-  	  let pr =  document.querySelector('.pr')
+  	  let pr =  document.querySelector('.score')
  
      btn1.onclick = function(){
        e1.style.left = 950 + "px";
@@ -110,9 +110,8 @@
      	alert('успех');
      	e1.style.background = "none";
      	img1.style.display = "block";
-      pr.innerHTML = 1;
-      pr.textContent = score;
      	score = score + 1
+      pr.innerHTML = score;    
      if (score == 5) {
      	alert('ты победил!')
      }
@@ -121,39 +120,41 @@
      	alert('успех');
      	e2.style.background = "none";
      	img2.style.display = "block";
-     	pr.innerHTML = 1;
      	score = score + 1
+     	pr.innerHTML = score;  	
      }
       e3.onclick = function(){
      	alert('успех');
      	e3.style.background = "none";
      	img3.style.display = "block";
-     	pr.innerHTML = 1;
      	score = score + 1
+     	pr.innerHTML = score;    	
      }
       e4.onclick = function(){
      	alert('успех');
      	e4.style.background = "none";
      	img4.style.display = "block";
-     	pr.innerHTML = 1;
      	score = score + 1
+     	pr.innerHTML = score;
      }
       e5.onclick = function(){
      	alert('успех');
      	e5.style.background = "none";
      	img5.style.display = "block";
-     	pr.innerHTML = 1;
      	score = score + 1
+     	pr.innerHTML = score;
+    
      }
       e6.onclick = function(){
      	alert('проигрыш');
      	e6.style.background = "none";
      	img6.style.display = "block";
-     	pr.innerHTML = -6;
-     	score = score - 6
-     if (score == -1) {
+      score = score - 6
+     	pr.innerHTML = score;
+     if (score <= -1) {
      	alert('ты проиграл');
       center.style.display = "none";
+
      }
 
      }
